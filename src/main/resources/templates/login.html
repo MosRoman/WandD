@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"  cachingAllowed="false">
+    <title>Login</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <div id="header">
+
+        <img src="images/d4.png" width="150" height="150" id="rez" alt="clock" align="left">
+        <p>Wheels and Discs</p>
+
+
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-signin" th:action="@{/login}" method="post">
+            <ul class="navbar-nav mr-auto">
+
+                <li>
+
+                    <!--<label for="email" class="sr-only">Email address</label>-->
+                    <input type="email" id="email" name="email" class="form-control"
+                           placeholder="Email address" required autofocus>
+
+                </li>
+                <li>
+                    <!--<label for="password" class="sr-only">Password</label>-->
+                    <input type="password" id="password" name="password" class="form-control"
+                           placeholder="Password" required>
+                </li>
+                <li>
+                    <button class="btn btn-outline-secondary " type="submit">Sign in</button>
+                </li>
+
+                <li>
+                    <input class="btn btn-outline-secondary " type="submit" value="Register"
+                           onClick='location.href="/registration"'>
+                </li>
+
+            </ul>
+            </form>
+
+            <!--<ul class="navbar-nav mr-auto">-->
+                <!--<li class="nav-item active">-->
+                <!--<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
+                <!--</li>-->
+                <!--<li class="nav-item">-->
+                <!--<a class="nav-link" href="#">Link</a>-->
+                <!--</li>-->
+                <!--<li class="nav-item dropdown">-->
+                <!--<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                <!--Dropdown-->
+                <!--</a>-->
+                <!--<div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+                <!--<a class="dropdown-item" href="#">Action</a>-->
+                <!--<a class="dropdown-item" href="#">Another action</a>-->
+                <!--<div class="dropdown-divider"></div>-->
+                <!--<a class="dropdown-item" href="#">Something else here</a>-->
+                <!--</div>-->
+                <!--</li>-->
+                <!--<li class="nav-item">-->
+                <!--<a class="nav-link disabled" href="#">Disabled</a>-->
+                <!--</li>-->
+
+            <!--</ul>-->
+            <!--<form class="form-inline my-2 my-lg-0">-->
+                <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+                <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+            <!--</form>-->
+        </div>
+    </nav>
+
+
+
+
+    <!--<div class="container">-->
+        <!--<div class="row">-->
+            <!--<div class="col-">-->
+                <!--<label for="email" class="sr-only">Email address</label>-->
+                <!--<input type="email" id="email" name="email" class="form-control"-->
+                       <!--placeholder="Email address" required autofocus>-->
+            <!--</div>-->
+            <!--<div class="col-">-->
+                <!--<label for="password" class="sr-only">Password</label>-->
+                <!--<input type="password" id="password" name="password" class="form-control"-->
+                       <!--placeholder="Password" required>-->
+            <!--</div>-->
+            <!--<div class="col-">-->
+                <!--<button class="btn btn-outline-secondary" type="submit">Sign in</button>-->
+            <!--</div>-->
+            <!--<div class="col-">-->
+                <!--<input class="btn btn-outline-secondary" type="submit" value="Register"-->
+                       <!--onClick='location.href="/registration"'>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="text-center">
+        <div class="form-signin">
+            <div th:if="${param.error}" class="alert alert-error">
+                Invalid email or password.
+            </div>
+            <div th:if="${param.logout}" class="alert alert-success">
+                You have been logged out.
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="content">
+
+
+        <nav class="navbar navbar-default">
+
+            <div class="container-fluid">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul id="groupList" class="nav navbar-nav">
+
+
+                        <c:url value="/j_spring_security_check" var="loginUrl"/>
+
+                        <li>
+                            <form action="${loginUrl}" method="POST">
+                                Login: <input class="btn btn-default navbar-btn" type="text" name="j_login" size="10">
+                                Password: <input class="btn btn-default navbar-btn" type="password" name="j_password"
+                                                 size="10">
+                                <input class="btn btn-default navbar-btn" type="submit" value="Enter"/>
+
+                            </form>
+                        </li>
+                        <li><input class="btn btn-default navbar-btn" type="submit" value="Register"
+                                   onClick='location.href="/register"'></li>
+
+                        <!--<button type="button" id="register" class="btn btn-default navbar-btn">Register</button> </li>-->
+                    </ul>
+
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+
+    </div>
+</div>
+
+
+<script>
+    $('.dropdown-toggle').dropdown();
+
+    $('#register').click(function () {
+        window.location.href = "/register";
+    });
+
+    $('#add_product').click(function () {
+        window.location.href = '/product_add_page';
+    });
+    $('#basket').click(function () {
+        window.location.href = '/basket_page';
+    });
+    $('#basket2').click(function () {
+        window.location.href = '/basket_page2';
+    });
+    $('#admin').click(function () {
+        window.location.href = '/admin';
+    });
+
+
+    $('#delete_product').click(function () {
+        var data = {'toDelete[]': []};
+        $(":checked").each(function () {
+            data['toDelete[]'].push($(this).val());
+        });
+        $.post("/product/delete", data, function (data, status) {
+            window.location.reload();
+        });
+    });
+
+    $('#order_product').click(function () {
+        var data = {'toDelete[]': []};
+        $(":checked").each(function () {
+            data['toDelete[]'].push($(this).val());
+        });
+        $.post("/product/order", data, function (data, status) {
+            window.location.reload();
+        });
+    });
+
+</script>
+</body>

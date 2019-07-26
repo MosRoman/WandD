@@ -1,0 +1,85 @@
+body {
+    background-image: url(../images/m1.jpg);
+
+}
+
+#login {
+    width: 300px;
+    height: 250px;
+    margin: 30px 10px;
+
+    background-image: url(../images/b2.jpg);
+    outline: 1px solid #111111;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+#wrapper {
+    width: 1200px;
+    margin: 30px auto;
+    /*height:900px;*/
+    background-image: url(../images/b2.jpg);
+    /*outline:10px solid darkgrey ;*/
+    position: relative;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: darkgrey;
+
+}
+
+#header {
+
+    height: 200px;
+    padding: 10px 20px;
+    margin: 5px;
+
+}
+
+#content {
+    padding: 10px 20px;
+    margin: 5px;
+
+}
+
+#rez {
+
+    left: 25px;
+    top: 25px;
+
+}
+
+#back {
+    position: absolute;
+}
+
+#rez2 {
+
+    left: 10px;
+    bottom: 10px;
+
+}
+
+h1 {
+    font: italic bold 50px Verdana;
+}
+
+p {
+    font: italic bold 75px Verdana;
+    text-align: center;
+
+}
+
+a {
+    color: #111111;
+}
+
+tr {
+    height: 85px;
+    text-align: center;
+
+}
+
+#out {
+
+}
